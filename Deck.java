@@ -7,6 +7,7 @@ public class Deck {
    public Deck(){
       deck = new ArrayList<Card>();
       //TODO: Add a card (2-14) of each suit (h,s,d,c)
+      
    }
 
    public Card remove(){
