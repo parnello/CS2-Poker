@@ -69,6 +69,13 @@ public class Hand implements Comparable {
      return needed == matching;
    }
 
+   private boolean isFullHouse(){
+     if(hasRow(3) && hand.get(3).value == hand.get(4).value)
+       return true;
+     return (hasRow(2) && hasRow(3) && hand.get(2).value == hand.get(4).value);
+   }
+
+
    public int compareTo(Object x){
       Hand other = (Hand)x;
       //TODO: Compare hands by ordering above; return -1, 1, or 0
