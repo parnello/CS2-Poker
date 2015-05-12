@@ -21,20 +21,28 @@ public class Hand implements Comparable {
 
    /*
    BEST
-   Royal Flush
-   Straight Flush
-   Four of a Kind
-   Full House
-   Flush
-   Straight
-   Three of a Kind
-   Two Pair
-   One Pair
-   High Card
+   Royal Flush = Flush + Straight (10 up)
+   Straight Flush = Flush + Straight
+   Four of a Kind = 4 of one value
+   Full House = Three of a kind + one pair
+   Flush = all same suit
+   Straight = 5 in a row
+   Three of a Kind = 3 of one value
+   Two Pair = 2 pairs
+   One Pair = 2 of same value
+   High Card = highest card in your hand
    WORST
    */
    public String handValue() {
-     return "TODO: String of Best Hand; may need helper methods";
+     return "";
+   }
+
+   private boolean isStraight() {
+     for(int i = 0; i < 4; i++) {
+       if(hand.get(i).value+1 != hand.get(i+1).value)
+         return false;
+     }
+     return true;
    }
 
    public int compareTo(Object x){
