@@ -89,7 +89,7 @@ public class Hand implements Comparable {
    }
 
    private Card getHighestCard() {
-     Card max = hand.get(1);
+     Card max = hand.get(0);
      for(Card c : hand)
       if(c.value > max.value)
         max = c;
