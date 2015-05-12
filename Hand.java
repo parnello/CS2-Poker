@@ -54,7 +54,6 @@ public class Hand implements Comparable {
      return true;
    }
 
-
    private boolean hasRow(int needed) {
      int matching = 0;
      int val = hand.get(0).value;
@@ -75,6 +74,19 @@ public class Hand implements Comparable {
      return (hasRow(2) && hasRow(3) && hand.get(2).value == hand.get(4).value);
    }
 
+   private boolean isTwoPair(){
+     boolean pair1 = false;
+     boolean pair2 = false;
+     for(int i = 0; i < 4; i++) {
+       if(hand.get(i).value == hand.get(i+1).value) {
+        if(pair1)
+          pair2 = true;
+        else
+          pair1 = true;
+       }
+     }
+     return pair1 && pair2;
+   }
 
    public int compareTo(Object x){
       Hand other = (Hand)x;
