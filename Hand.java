@@ -37,6 +37,15 @@ public class Hand implements Comparable {
      return "";
    }
 
+   private boolean isFlush() {
+     String suit = hand.get(0).suit;
+     for(Card c : hand) {
+       if(!c.suit.equals(suit))
+        return false;
+     }
+     return true;
+   }
+
    private boolean isStraight() {
      for(int i = 0; i < 4; i++) {
        if(hand.get(i).value+1 != hand.get(i+1).value)
