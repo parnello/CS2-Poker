@@ -54,6 +54,21 @@ public class Hand implements Comparable {
      return true;
    }
 
+
+   private boolean hasRow(int needed) {
+     int matching = 0;
+     int val = hand.get(0).value;
+     for(Card c : hand) {
+       if(c.value == val)
+         matching++;
+       else {
+         matching = 1;
+         val = c.value;
+       }
+     }
+     return needed == matching;
+   }
+
    public int compareTo(Object x){
       Hand other = (Hand)x;
       //TODO: Compare hands by ordering above; return -1, 1, or 0
